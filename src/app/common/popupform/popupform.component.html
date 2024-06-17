@@ -1,0 +1,21 @@
+<div *ngIf="openpopup"  class="example-container">
+    <h1>Customize</h1>
+    <div 
+    class="example-list"
+    >
+       <h2>Field type</h2> 
+       <input [defaultValue]="openpopup.name" (input)="onChange($event)"/>
+       <h2>Input type</h2>
+       <input [defaultValue]="openpopup.type"/>
+       <h2>Placeholder</h2>
+       <input [defaultValue]="openpopup.placeholder" (input)="onChange($event)"/>
+       <div *ngIf="openpopup.options">
+        <h2>Options</h2>
+        @for(item of openpopup.options;track $index){
+            <input [defaultValue]="item" (input)="onChange($event)" />
+        }
+        <input />
+       </div>
+    </div>
+</div>
+

@@ -1,0 +1,17 @@
+<div class="example-container">
+    <h2>Drop</h2>
+
+    <div
+      cdkDropList
+      [cdkDropListData]="day"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <!-- @for (item of done; track item) {
+        <div class="example-box" cdkDrag>
+          <label>{{item.name}}</label>
+          <input placeholder={{item.placeholder}} type={{item.type}}/>
+        </div>
+      } -->
+      <app-form-renderer [data]="day"></app-form-renderer>
+    </div>
+</div>

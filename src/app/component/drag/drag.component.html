@@ -1,0 +1,17 @@
+<div class="example-container">
+    <h2>Drag</h2>
+
+    <div
+      cdkDropList
+      [cdkDropListData]="todo"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <!-- @for (item of todo; track item) {
+        <div class="example-box" cdkDrag>
+          <label>{{item.name}}</label>
+          <input placeholder={{item.placeholder}} type={{item.type}}/>
+        </div>
+      } -->
+      <app-form-renderer [data]="todo"></app-form-renderer>
+    </div>
+  </div>

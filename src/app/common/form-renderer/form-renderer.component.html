@@ -1,0 +1,31 @@
+<div >
+    @for (item of data; track item){
+    <div class="example-boxs" cdkDrag>
+        @if(item.type == "integer"){
+            <h3>{{item.name}}</h3>
+            <input type="integer" >
+        }@else if (item.type == "text") {
+            <h3>{{item.name}}</h3>
+            <input type="text" />
+        }@else if (item.type == "password") {
+            <h3>{{item.name}}</h3>
+            <input type="password" />
+        }@else if (item.type == "dropdown") {
+            <h3>{{item.name}}</h3>
+            <select name={{item.name}}>
+                @for (items of item.options; track items){
+                    <option value={{items}}>{{items}}</option>
+                }
+            </select>
+        }@else if(item.type == "radio") {
+            <h3>{{item.name}}</h3>
+            @for(items of item.options;track items){
+            <div>
+                <input type="radio" id={{items}} name={{item.name}} value={{items}}>
+                <label for={{items}}>{{items}}</label><br>
+            </div>
+            }
+        }
+    </div>
+    }
+</div>
